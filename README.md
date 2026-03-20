@@ -182,8 +182,9 @@ Starting from it, some changes and optimizations have been applied, listed below
 - added `flash` target to flash firmware to MCU
 - added `rebuild_all` target to use in conjunction with Bear utility
 - added conditional sections to change optimizations based on DEBUG variable value
--  added conditional sections to change build directory based on `settings.json` variables and DEBUG variable value
+- added conditional sections to change build directory based on `settings.json` variables and DEBUG variable value
 - added the -p parameter to mkdir commands, to create complete paths
+- added --print-memory-usage to print RAM and FLASH usage
 
 
 
