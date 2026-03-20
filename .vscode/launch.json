@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/nucleo_vscodium.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            //"preLaunchCommands": ["make flash_debug -j$(nproc)"],
+            // "preLaunchCommands": ["make flash"],
+            "servertype": "openocd",
+            "gdbPath": "arm-none-eabi-gdb",
+            "postRestartCommands": ["break main", "continue"],
+            "device": "STM32F446",
+            "interface": "swd",
+            //"showDevDebugOutput": "parsed",
+            "showDevDebugOutput": "raw",
+            "overrideLaunchCommands": [
+                "interpreter-exec console \"monitor reset halt\"",
+                "-target-download",
+                //'interpreter-exec console \"monitor reset halt\"',
+                "-enable-pretty-printing"
+            ],
+            "configFiles": ["${workspaceFolder}/st_nucleo_f4.cfg"],
+            "svdFile": "${workspaceFolder}/STM32F446.svd"
+        }
+    ]
+}

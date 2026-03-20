@@ -1,0 +1,64 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build debug",
+			"command": "make",
+			"args": ["all", "-j$(nproc)", "DEBUG=1", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Build all with arm-none-eabi-gcc"
+		},
+		{
+			"type": "shell",
+			"label": "Clean debug",
+			"command": "make",
+			"args": ["clean", "DEBUG=1", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Clean project"
+		},
+		{
+			"type": "shell",
+			"label": "Build debug and flash",
+			"command": "make",
+			"args": ["flash", "-j$(nproc)", "DEBUG=1", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Build all with arm-none-eabi-gcc and flash firmware ST Programmer"
+		},
+		{
+			"type": "shell",
+			"label": "Build release",
+			"command": "make",
+			"args": ["all", "-j$(nproc)", "DEBUG=0", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Build all with arm-none-eabi-gcc"
+		},
+		{
+			"type": "shell",
+			"label": "Clean release",
+			"command": "make",
+			"args": ["clean", "DEBUG=0", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Clean project"
+		},
+		{
+			"type": "shell",
+			"label": "Build release and flash",
+			"command": "make",
+			"args": ["flash", "-j$(nproc)", "DEBUG=0", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"],
+			"group": "build",
+			"detail": "Build all with arm-none-eabi-gcc and flash firmware ST Programmer"
+		},
+		{
+			"type": "shell",
+			"label": "Bear - Build clangd json file",
+			"command": "bear",
+			"args": ["--output", "${workspaceFolder}/compile_commands.json",
+					"--", "make", "rebuild_all", "MY_BUILD_DIR=${config:BUILD_DIR}/${config:FW_NAME}"
+					], 
+			"group": "build",
+			"detail": "Execute Bear utility to create compile_commands.json file"
+		},
+	]
+}
+
