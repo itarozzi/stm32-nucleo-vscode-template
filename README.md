@@ -39,14 +39,14 @@ extra/bear 4.0.4-1
 ```
 
 
-In VsCodium install the following add-ons:
+In VSCodium install the following add-ons:
 
 - clangd
 - Cortex-Debug
 
 ## Project Creation
 
-Using CubeMX, select board/MCU and generate the project code, specifying the **Toolchain/IDE**: `Makefile`.
+Using STM32CubeMX select board/MCU and generate the project code, specifying the **Toolchain/IDE**: `Makefile`.
 
 From the project directory, run `make` to verify that the toolchain is OK. This should compile and generate the `.elf` file.
 
@@ -75,10 +75,10 @@ Then you can refer to these variables (eg. in task file) using the syntax: `${co
 
 ## Tasks
 
-In vscodium, tasks allow you to perform a series of operations using external tools. These can be run in the IDE through the menus or the CTRL-SHIFT-B shortcut.
+In VSCodium, **Tasks** allows you to perform a series of operations using external tools. These can be run in the IDE using menus or the CTRL-SHIFT-B shortcut.
 
 In this case we'll use them to:
-- call bear to generate clangd configuration file
+- call Bear to generate clangd configuration file
 - build the project calling make
 - flash the firmware to MCU calling make
 
@@ -127,7 +127,7 @@ Run the task and check that the Board is programmed correctly.
 
 You can use ST-LINK and gdb to debug the firmware, using breakpoint and inspecting registers, memories and variables.
 
-Create the  `.vscode/launch.json` file (see [template](.vscode/launch.json) in this repository.
+Create the  `.vscode/launch.json` file (see [template](.vscode/launch.json) in this repository).
 
 Adapt it to your requirements:
 - check the `executables` field is pointing  to your elf
@@ -143,9 +143,9 @@ Press F5 to start the debugger.
 If everything works you should see the debugger stop at the first instruction of the main.
 
 
-## Clangd e Bear
+## Clangd and Bear
 
-The VSCode clangd plugin ([clangd](https://github.com/clangd/vscode-clangd) provide some useful features to help editing C/C++ code.
+The VSCode clangd plugin ([clangd](https://github.com/clangd/vscode-clangd)) provide some useful features to help editing C/C++ code.
 
 To allow clangd to index all the files of your project you can use the `bear` tool to generate a `compile_command.json` file.
 
@@ -176,13 +176,14 @@ From that moment, autocompletion features, function jumps, etc. should be activa
 
 ## Tips and Tricks
 
-When STM32cubeMX create project directory, it crates a basic Makefile. 
+When STM32cubeMX generates project directory, it creates a basic Makefile. 
 
 Starting from it, some changes and optimizations have been applied, listed below:
 - added `flash` target to flash firmware to MCU
 - added `rebuild_all` target to use in conjunction with Bear utility
 - added conditional sections to change optimizations based on DEBUG variable value
 -  added conditional sections to change build directory based on `settings.json` variables and DEBUG variable value
+- added the -p parameter to mkdir commands, to create complete paths
 
 
 
@@ -197,7 +198,7 @@ Other customization are:
 
 This projects uses the MIT License. See LICENSE file for details.
 
-A big thank you to Enrico Marchesini who taught me the workflow to arrive at the definition of this repository and supported me in my first steps on STM32 and VSCodium.
+A big thank you to Enrico Marchesini who taught me the workflow to permits this repository to exists and supported me in my first steps on STM32 and VSCodium world.
 
 Please feel free to share, improve or report inaccuracies.
 
