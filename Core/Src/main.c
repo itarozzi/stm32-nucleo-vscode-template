@@ -105,14 +105,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-
     // Blink the onboard led
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 
     HAL_Delay(1000);
 
     printf("Blink STM32 !\r\n");
+
+    /* USER CODE END WHILE */
+
 
     /* USER CODE BEGIN 3 */
   }
