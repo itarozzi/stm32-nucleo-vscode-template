@@ -17,7 +17,7 @@ Software and tools used in this workflow:
 I used this repo on Arch Linux but the same can be applied to other GNU/Linux distro.
 
 
-> A special thank to my friend Enrico Marchesini for his support. This workflow is the result of his expertise and hard work.
+> A special thank to my friend [Enrico Marchesini](https://gitlab.com/enmarke/) for his support. This workflow is the result of his expertise and hard work.
 
 
 ## Prerequisites
@@ -198,7 +198,7 @@ Other customization are:
 
 This projects uses the MIT License. See LICENSE file for details.
 
-A big thank you to Enrico Marchesini who taught me the workflow to permits this repository to exists and supported me in my first steps on STM32 and VSCodium world.
+A big thank you to [Enrico Marchesini](https://gitlab.com/enmarke/) who taught me the workflow to permits this repository to exists and supported me in my first steps on STM32 and VSCodium world.
 
 Please feel free to share, improve or report inaccuracies.
 

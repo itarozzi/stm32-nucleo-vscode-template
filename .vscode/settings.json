@@ -1,5 +1,6 @@
 {
     "FW_NAME": "nucleo_vscodium",
     // "BUILD_DIR": "./build"
-    "BUILD_DIR": "/tmp/stm32_build"
+    "BUILD_DIR": "/tmp/stm32_build",
+   
 }
